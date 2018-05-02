@@ -1,0 +1,12 @@
+.square {
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square:not(:last-child) {
+   border-right: 1px solid #d8d8d8;
+}

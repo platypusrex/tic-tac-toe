@@ -1,0 +1,12 @@
+.board {
+    position: relative;
+    padding: 25px 50px;
+}
+
+.board__row {
+    display: flex;
+}
+
+.board__row:not(:last-child) {
+    border-bottom: 1px solid #d8d8d8;
+}

@@ -1,0 +1,13 @@
+.logo {
+    background: #00D498;
+    padding: 10px 40px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo__img {
+    max-width: 200px;
+}

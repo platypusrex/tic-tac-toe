@@ -1,0 +1,35 @@
+.input,
+.textArea,
+.input__error {
+    font-size: 14px;
+}
+
+.input,
+.textArea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    border: 1px solid #e9e9e9;
+    transition: all .15s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.input.error,
+.textArea.error {
+    border-color: red;
+    background: red;
+    transition: all .15s ease-in-out;
+}
+
+.input__wrapper {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.input__error {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: red;
+}

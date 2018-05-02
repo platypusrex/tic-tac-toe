@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Game-Screen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-558.000000, -447.000000)" fill-opacity="0.687811368">
+        <path d="M598,527 C575.90861,527 558,509.09139 558,487 C558,464.90861 575.90861,447 598,447 C620.09139,447 638,464.90861 638,487 C638,509.09139 620.09139,527 598,527 Z M599,508 C610.045695,508 619,499.045695 619,488 C619,476.954305 610.045695,468 599,468 C587.954305,468 579,476.954305 579,488 C579,499.045695 587.954305,508 599,508 Z" id="Combined-Shape" fill="#EB2F2F"></path>
+    </g>
+</svg>

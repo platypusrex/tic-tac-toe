@@ -1,0 +1,38 @@
+.game {
+    background: #24A5D3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+}
+
+.game__board {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.game__controls {
+    margin-top: 25px;
+    display: flex;
+    min-width: 400px;
+    justify-content: center;
+}
+
+.game__controls .button {
+    width: auto;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 1092px) {
+    .game {
+        padding: 120px 12px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .game {
+        padding: 100px 12px;
+    }
+}

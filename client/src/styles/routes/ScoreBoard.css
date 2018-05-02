@@ -1,0 +1,7 @@
+.score-board {
+    display: flex;
+    min-width: 400px;
+    justify-content: space-between;
+    color: #fff;
+    padding: 10px;
+}

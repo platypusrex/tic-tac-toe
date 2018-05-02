@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="315px" height="38px" viewBox="0 0 315 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Tic Tac Toe</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Game-Screen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-561.000000, -295.000000)" font-family="GillSans-UltraBold, Gill Sans" font-size="48" font-weight="700">
+        <text id="Tic-Tac-Toe" fill="#FFFFFF">
+            <tspan x="561" y="332">Tic Tac Toe</tspan>
+        </text>
+    </g>
+</svg>
