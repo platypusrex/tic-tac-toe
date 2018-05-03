@@ -6,18 +6,18 @@ import { withAllGames } from "../../api/withAllGames";
 import '../../styles/routes/ScoreBoard.css';
 
 export const ScoreBoardComponent = (props) => {
-	const { currentPlayer, winner, player1Wins, player2Name, player2Wins } = props;
+	const { currentPlayer, winner, player1, player2, player1Wins, player2Wins } = props;
 
 	return (
 		<div className="score-board">
 			<Player
-				name="Player 1"
+				name={player1}
 				current={currentPlayer === 1 && !winner}
 				wins={player1Wins}
 			/>
 
 			<Player
-				name={player2Name}
+				name={player2}
 				current={currentPlayer === 2 && !winner}
 				wins={player2Wins}
 			/>
@@ -40,12 +40,10 @@ function getNumPlayerWins (props, player) {
 export const ScoreBoard = compose(
 	withAllGames,
 	withProps(props => {
-		const player2Name = props.gameType === 'one-player' ? 'Computer' : 'Player 2';
-		const player1Wins = getNumPlayerWins(props, 'Player 1');
-		let player2Wins = getNumPlayerWins(props, player2Name);
+		const player1Wins = getNumPlayerWins(props, props.player1);
+		let player2Wins = getNumPlayerWins(props, props.player2);
 
 		return {
-			player2Name,
 			player1Wins: player1Wins.length,
 			player2Wins: player2Wins.length,
 		}
