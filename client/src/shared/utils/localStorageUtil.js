@@ -67,4 +67,6 @@ export function getUserFromToken () {
 	return tokenBody.user;
 }
 
+export const withUserId = withProps({userId: getUserId()});
+
 export const withUserTokenProps = withProps({user: getUserFromToken()});
