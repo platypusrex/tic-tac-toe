@@ -1,9 +1,12 @@
 import React from 'react';
-import { compose, withHandlers, withProps } from 'recompose';
+import { branch, compose, renderComponent, withHandlers, withProps } from 'recompose';
 import { withState } from '../../shared/containers/withState';
-import { withAddGame } from "../../api/withAddGame";
 import { calculateWinner, handleAddNewGame, handleOnePlayerSquareClick } from "./GameHandlers";
 import { Game } from "./Game";
+import { Loading } from "../../shared/components/Loading";
+import { withUserById } from "../../api/withUserById";
+import { withUserId } from "../../shared/utils/localStorageUtil";
+import { onePlayerGame } from "../../shared/constants/gameConstants";
 
 const initialState = {
 	history: [{squares: Array(9).fill(null)}],
@@ -15,7 +18,7 @@ const initialState = {
 };
 
 const OnePlayerGameComponent = (props) => {
-	const { state, gameType } = props;
+	const { state, gameType, player1, player2 } = props;
 	const history = state.history;
 	const current = history[state.stepNumber];
 	const currentSquares = current.squares;
@@ -28,6 +31,8 @@ const OnePlayerGameComponent = (props) => {
 
 	return (
 		<Game
+			player1={player1}
+			player2={player2}
 			gameType={gameType}
 			currentPlayer={state.currentPlayer}
 			winner={winner}
@@ -40,13 +45,24 @@ const OnePlayerGameComponent = (props) => {
 };
 
 export const OnePlayerGame = compose(
-	withAddGame,
 	withState(initialState),
-	withProps(() => ({
-		player1: 'Player 1',
-		player2: 'Computer',
-		gameType: 'one-player'
-	})),
+	withUserId,
+	withUserById,
+	withProps(props => {
+		const player1 =
+			props.data &&
+			props.data.userById &&
+			props.data.userById.username;
+
+		return {
+			player1: player1,
+			player2: onePlayerGame.player2,
+			gameType: onePlayerGame.gameType
+		}
+	}),
+	branch(props => props.data.loading,
+		renderComponent(() => <Loading/>)
+	),
 	withHandlers({
 		handleSelectFirstPlayer: (props) => (player) => {
 			const { setState } = props;
