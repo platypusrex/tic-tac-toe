@@ -1,7 +1,6 @@
 import React from 'react';
 import { compose, withHandlers, withProps } from 'recompose';
 import { withState } from '../../shared/containers/withState';
-import { withAddGame } from "../../api/withAddGame";
 import { Game } from "./Game";
 import { calculateWinner, handleAddNewGame, handleTwoPlayerSquareClick } from "./GameHandlers";
 
@@ -41,7 +40,6 @@ const TwoPlayerGameComponent = (props) => {
 };
 
 export const TwoPlayerGame = compose(
-	withAddGame,
 	withState(initialState),
 	withProps(() => ({
 		player1: 'Player 1',
