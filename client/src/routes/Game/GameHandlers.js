@@ -1,4 +1,5 @@
 import swal from "sweetalert";
+import {addGame} from "../../api/withAddGame";
 
 const getAvailableSpots = (board) => {
 	let result = [];
@@ -152,7 +153,7 @@ export const handleTwoPlayerSquareClick = (props, i) => {
 };
 
 export const handleAddNewGame = (props, initialState, winner) => {
-	const { state, setState, player1, player2, addGame } = props;
+	const { state, setState, player1, player2 } = props;
 	let playerWinner;
 	let title;
 
