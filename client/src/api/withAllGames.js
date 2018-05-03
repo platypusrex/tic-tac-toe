@@ -13,7 +13,6 @@ export const allGamesQuery = gql`
   }
 `;
 
-export const withAllGames =
-	graphql(allGamesQuery, {
-		options: () =>  ({fetchPolicy: 'cache-and-network'})
-	});
+export const withAllGames = graphql(allGamesQuery, {
+	options: () =>  ({fetchPolicy: 'cache-and-network'})
+});
