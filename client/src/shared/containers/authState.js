@@ -11,8 +11,6 @@ const initialState = {
 const AuthProviderComponent = (props) => {
 	const { state, setState, children } = props;
 
-	console.log('auth state', state);
-
 	return (
 		<AuthContext.Provider
 			value={{
