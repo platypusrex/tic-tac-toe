@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
 import { graphql } from 'react-apollo';
 import { allGamesQuery } from "./withAllGames";
+import {apolloClient} from "./apiGraphqlUtil";
 
 const addGameMutation = gql`
   mutation ($players: [String!]!, $winner: String!) {
@@ -10,6 +11,18 @@ const addGameMutation = gql`
 		}
   }
 `;
+
+export async function addGame (variables) {
+	const options = {
+		variables,
+		mutation: addGameMutation,
+		refetchQueries: [
+			{query: allGamesQuery}
+		]
+	};
+
+	return apolloClient.mutate(options);
+}
 
 export const withAddGame = graphql(addGameMutation, {
 	props: ({ownProps, mutate}) => ({

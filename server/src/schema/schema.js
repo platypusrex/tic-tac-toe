@@ -16,9 +16,10 @@ export const typeDefs = `
 	}
 	
 	type Query {
-		getAllUsers: [User!]
-		getUserById(userId: Int!): User
+		allUsers: [User!]
+		userById(userId: Int!): User
 		allGames: [Game!]
+		gamesWonByUserId(username: String!): [Game!]
 	}
 	
 	type Mutation {
