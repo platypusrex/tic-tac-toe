@@ -29,8 +29,8 @@ export const GameComponent = (props) => {
 				>
 					{!currentPlayer &&
 					<PlayerSelection
-						gameType={gameType}
-						currentPlayer={currentPlayer}
+						player1={player1}
+						player2={player2}
 						handleSelectFirstPlayer={i => props.handleSelectFirstPlayer(i)}
 					/>}
 				</Board>
