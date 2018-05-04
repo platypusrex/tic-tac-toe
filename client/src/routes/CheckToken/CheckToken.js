@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, lifecycle } from 'recompose';
 import { Loading } from "../../shared/components/Loading";
 import { storeAuthToken, withUserTokenProps } from "../../shared/utils/localStorageUtil";
-import { withRefreshToken } from "../../api/withRefreshToken";
+import { withRefreshToken } from "../../api/auth/withRefreshToken";
 import { connect } from "react-redux";
 import { setAuthStatus } from "../../redux/authStore";
 
