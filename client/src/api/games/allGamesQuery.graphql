@@ -1,0 +1,12 @@
+query AllGamesQuery {
+  allGames {
+    id
+    createdAt
+    updatedAt
+    players
+    winner
+    history {
+      squares
+    }
+  }
+}
