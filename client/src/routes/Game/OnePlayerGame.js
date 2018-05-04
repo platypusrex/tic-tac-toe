@@ -4,7 +4,7 @@ import { withState } from '../../shared/containers/withState';
 import { calculateWinner, handleAddNewGame, handleOnePlayerSquareClick } from "./GameHandlers";
 import { Game } from "./Game";
 import { Loading } from "../../shared/components/Loading";
-import { withUserById } from "../../api/withUserById";
+import { withUserById } from "../../api/user/withUserById";
 import { withUserId } from "../../shared/utils/localStorageUtil";
 import { onePlayerGame } from "../../shared/constants/gameConstants";
 
