@@ -31,8 +31,9 @@ export const Mutation = {
 
 			return createToken(user);
 			},
-		addGame: async (parent, {players, winner}, {models}) => {
-			return await models.Game.create({players, winner});
+		addGame: async (parent, {players, winner, history}, {models}) => {
+			console.log('history', history);
+			return await models.Game.create({players, winner, history});
 		}
 	}
 };

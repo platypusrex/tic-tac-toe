@@ -1,17 +1,11 @@
 import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import RefreshTokenMutation from './refreshTokenMutation.graphql';
 
-const refreshTokenMutation = gql`
-	mutation ($userId: Int) {
-		refreshToken (userId: $userId)
-	}
-`;
-
-export const withRefreshToken = graphql(refreshTokenMutation, {
+export const withRefreshToken = graphql(RefreshTokenMutation, {
 	props: ({ownProps, mutate}) => ({
 		refreshToken: async (variables) => {
 			const options = {
-				mutation: refreshTokenMutation,
+				mutation: RefreshTokenMutation,
 				variables
 			};
 

@@ -7,12 +7,21 @@ export const typeDefs = `
 		updatedAt: String!
 	}
 	
+	input GameSquareInput {
+		squares: [String]
+	}
+	
+	type GameSquare {
+		squares: [String]
+	}
+	
 	type Game {
 		id: Int!
 		createdAt: String!
 		updatedAt: String!
 		players: [String!]!
 		winner: String!
+		history: [GameSquare]
 	}
 	
 	type Query {
@@ -26,6 +35,6 @@ export const typeDefs = `
 		register(username: String!, email: String!, password: String!): String!
 		login(email: String!, password: String!): String!
 		refreshToken(userId: Int): String!
-		addGame(players: [String!]!, winner: String!): Game!
+		addGame(players: [String!]!, winner: String!, history: [GameSquareInput]): Game!
 	}
 `;
