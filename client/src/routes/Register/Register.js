@@ -4,7 +4,7 @@ import { Logo } from "../../shared/components/Logo";
 import { Input } from "../../shared/components/Input";
 import { Button } from "../../shared/components/Button";
 import { withState } from "../../shared/containers/withState";
-import { withRegister } from "../../api/withRegister";
+import { withRegister } from "../../api/auth/withRegister";
 import { storeAuthToken } from "../../shared/utils/localStorageUtil";
 import { connect } from "react-redux";
 import { setAuthStatus } from "../../redux/authStore";
