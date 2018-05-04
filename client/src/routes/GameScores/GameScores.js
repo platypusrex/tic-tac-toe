@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose, withProps } from 'recompose';
-import { withAllGames } from "../../api/withAllGames";
+import { withAllGames } from "../../api/games/withAllGames";
 import { BackButton } from "../../shared/components/BackButton";
 import '../../styles/routes/GameScores.css';
 
