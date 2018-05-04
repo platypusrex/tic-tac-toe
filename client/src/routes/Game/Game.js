@@ -55,7 +55,10 @@ GameComponent.propTypes = {
 	gameType: PropTypes.string,
 	currentPlayer: PropTypes.number,
 	winner: PropTypes.string,
-	squares: PropTypes.array
+	squares: PropTypes.array,
+	handleSelectFirstPlayer: PropTypes.func.isRequired,
+	handleUndoMove: PropTypes.func.isRequired,
+	handleClickSquare: PropTypes.func.isRequired
 };
 
 export const Game = withRouter(GameComponent);
