@@ -18,24 +18,25 @@ export const PlayerSelection = (props) => {
 };
 
 PlayerSelection.propTypes = {
-	gameType: PropTypes.string.isRequired
+	player1: PropTypes.string.isRequired,
+	player2: PropTypes.string.isRequired,
+	handleSelectFirstPlayer: PropTypes.func.isRequired
 };
 
 function getFirstPlayerSelectionModel (props) {
-	const { gameType } = props;
-	const secondPlayerButton = {
-		text: gameType === 'one-player' ? 'Computer' : 'Player 2',
-		value: 2
-	};
+	const { player1, player2 } = props;
 
 	return swal({
 		title: `Who's gonna go first?`,
 		buttons: {
 			player1: {
-				text: 'Player 1',
+				text: player1,
 				value: 1,
 			},
-			player2: secondPlayerButton
+			player2: {
+				text: player2,
+				value: 2
+			},
 		},
 	}).then(player => {
 		switch (player) {
