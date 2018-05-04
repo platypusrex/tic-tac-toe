@@ -1,0 +1,9 @@
+mutation AddGameMutation ($players: [String!]!, $winner: String!, $history: [GameSquareInput]) {
+  addGame (players: $players, winner: $winner, history: $history) {
+    players
+    winner
+    history {
+      squares
+    }
+  }
+}
