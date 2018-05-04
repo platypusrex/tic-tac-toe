@@ -1,0 +1,3 @@
+mutation RefreshTokenMutation ($userId: Int) {
+  refreshToken (userId: $userId)
+}
