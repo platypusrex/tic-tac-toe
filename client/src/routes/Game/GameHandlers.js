@@ -1,5 +1,5 @@
 import swal from "sweetalert";
-import {addGame} from "../../api/withAddGame";
+import { addGame } from "../../api/games/withAddGame";
 
 const getAvailableSpots = (board) => {
 	let result = [];
@@ -176,7 +176,7 @@ export const handleAddNewGame = (props, initialState, winner) => {
 			}
 		},
 	}).then(async () => {
-		const game = {players: [player1, player2], winner: playerWinner};
+		const game = {players: [player1, player2], winner: playerWinner, history: state.history};
 		await addGame(game);
 
 		setState(initialState);
