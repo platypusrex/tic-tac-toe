@@ -1,17 +1,11 @@
 import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import LoginMutation from './loginMutation.graphql';
 
-const loginMutation = gql`
-	mutation ($email: String!, $password: String!) {
-		login (email: $email, password: $password) 
-	}
-`;
-
-export const withLogin = graphql(loginMutation, {
+export const withLogin = graphql(LoginMutation, {
 	props: ({ownProps, mutate}) => ({
 		loginUser: async (variables) => {
 			const options = {
-				mutation: loginMutation,
+				mutation: LoginMutation,
 				variables,
 			};
 
