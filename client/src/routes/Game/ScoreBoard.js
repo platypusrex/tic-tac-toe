@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import { Player } from "./Player";
-import { withAllGames } from "../../api/withAllGames";
+import { withAllGames } from "../../api/games/withAllGames";
 import '../../styles/routes/ScoreBoard.css';
 
 export const ScoreBoardComponent = (props) => {
