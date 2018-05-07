@@ -5,6 +5,7 @@
 .player h2 {
     margin: 0;
     padding: 10px;
+    min-width: 120px;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.09);
     transition: all .15s ease-in-out;
