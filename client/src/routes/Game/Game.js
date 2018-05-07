@@ -17,7 +17,6 @@ export const GameComponent = (props) => {
 			<ScoreBoard
 				player1={player1}
 				player2={player2}
-				gameType={gameType}
 				currentPlayer={currentPlayer}
 				winner={winner}
 			/>
@@ -52,7 +51,6 @@ export const GameComponent = (props) => {
 GameComponent.propTypes = {
 	player1: PropTypes.string.isRequired,
 	player2: PropTypes.string.isRequired,
-	gameType: PropTypes.string,
 	currentPlayer: PropTypes.number,
 	winner: PropTypes.string,
 	squares: PropTypes.array,

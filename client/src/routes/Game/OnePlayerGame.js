@@ -18,7 +18,7 @@ const initialState = {
 };
 
 const OnePlayerGameComponent = (props) => {
-	const { state, gameType, player1, player2 } = props;
+	const { state, player1, player2 } = props;
 	const history = state.history;
 	const current = history[state.stepNumber];
 	const currentSquares = current.squares;
@@ -33,7 +33,6 @@ const OnePlayerGameComponent = (props) => {
 		<Game
 			player1={player1}
 			player2={player2}
-			gameType={gameType}
 			currentPlayer={state.currentPlayer}
 			winner={winner}
 			squares={currentSquares}
@@ -57,7 +56,6 @@ export const OnePlayerGame = compose(
 		return {
 			player1: player1,
 			player2: onePlayerGame.player2,
-			gameType: onePlayerGame.gameType
 		}
 	}),
 	branch(props => props.data.loading,
