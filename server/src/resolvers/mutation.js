@@ -1,4 +1,5 @@
 import {createToken, hashPassword, validatePassword} from "../utils/auth";
+import { pubsub } from "./index";
 
 export const Mutation = {
 	Mutation: {
@@ -33,6 +34,15 @@ export const Mutation = {
 			},
 		addGame: async (parent, {players, winner, history}, {models}) => {
 			return await models.Game.create({players, winner, history});
+		},
+		addComment: async (parent, args, {models}) => {
+			const comment = await models.Comment.create(args);
+
+			pubsub.publish('commentAdded', {
+				commentAdded: comment.dataValues
+			});
+
+			return comment;
 		}
 	}
 };
