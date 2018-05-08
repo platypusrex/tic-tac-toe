@@ -2,8 +2,21 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
+import { WebSocketLink } from 'apollo-link-ws';
 import { onError } from 'apollo-link-error';
-import { ApolloLink } from 'apollo-link';
+import { ApolloLink, split } from 'apollo-link';
+import { getMainDefinition } from 'apollo-utilities';
+
+const httpLink = new HttpLink({
+	uri: 'http://localhost:4000/graphql',
+});
+
+const wsLink = new WebSocketLink({
+	uri: 'ws://localhost:4000/',
+	options: {
+		reconnect: true
+	}
+});
 
 export const apolloClient = new ApolloClient({
 	link: ApolloLink.from([
@@ -17,10 +30,18 @@ export const apolloClient = new ApolloClient({
 				console.log(`[Network error]: ${networkError}`);
 			}
 		}),
-		new HttpLink({
-			uri: 'http://localhost:4000/graphql',
-			credentials: 'same-origin'
-		})
+		split(
+			({query}) => {
+				const { kind, operation } = getMainDefinition(query);
+				return kind === 'OperationDefinition' && operation === 'subscription';
+			},
+			wsLink,
+			httpLink,
+		)
+		// new HttpLink({
+		// 	uri: 'http://localhost:4000/graphql',
+		// 	credentials: 'same-origin'
+		// })
 	]),
 	cache: new InMemoryCache()
 });
