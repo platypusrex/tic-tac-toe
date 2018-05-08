@@ -24,6 +24,14 @@ export const typeDefs = `
 		history: [GameSquare]
 	}
 	
+	type Comment {
+		id: Int!
+		createdAt: String!
+		updatedAt: String!
+		comment: String!,
+		userId: Int!
+	}
+	
 	type Query {
 		allUsers: [User!]
 		userById(userId: Int!): User
@@ -36,5 +44,10 @@ export const typeDefs = `
 		login(email: String!, password: String!): String!
 		refreshToken(userId: Int): String!
 		addGame(players: [String!]!, winner: String!, history: [GameSquareInput]): Game!
+		addComment(comment: String!, userId: Int!): Comment!
+	}
+	
+	type Subscription {
+		commentAdded (userId: Int): Comment
 	}
 `;
