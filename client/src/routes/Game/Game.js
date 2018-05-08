@@ -9,7 +9,7 @@ import '../../styles/routes/Game.css';
 import {BackButton} from "../../shared/components/BackButton";
 
 export const GameComponent = (props) => {
-	const { gameType, currentPlayer, player1, player2, winner, squares } = props;
+	const { currentPlayer, player1, player2, winner, squares } = props;
 
 	return (
 		<div className="game">
