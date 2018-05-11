@@ -51,8 +51,8 @@ export const TwoPlayerGame = compose(
 	withProps(props => {
 		const player1 =
 			props.data &&
-			props.data.userById &&
-			props.data.userById.username;
+			props.data.getUserById &&
+			props.data.getUserById.username;
 
 		return {
 			player1: player1,
