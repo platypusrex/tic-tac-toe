@@ -1,4 +1,4 @@
-export const gameSchema = `
+export const gameTypes = `
 	enum GameStatus {
 		pending
 		started

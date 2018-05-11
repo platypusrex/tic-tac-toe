@@ -1,10 +1,10 @@
 import { mergeTypes } from 'merge-graphql-schemas';
-import { gameSchema } from "./game";
-import { userSchema } from "./user";
-import { commentSchema } from "./comment";
+import { gameTypes} from "./game";
+import { userTypes } from "./user";
+import { commentTypes} from "./comment";
 
 export const typeDefs = mergeTypes([
-	gameSchema,
-	userSchema,
-	commentSchema
+	gameTypes,
+	userTypes,
+	commentTypes
 ]);

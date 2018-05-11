@@ -1,4 +1,4 @@
-export const userSchema = `
+export const userTypes = `
 	type User {
 		id: Int!
 		createdAt: String!

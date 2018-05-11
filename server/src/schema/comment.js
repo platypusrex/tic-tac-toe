@@ -1,4 +1,4 @@
-export const commentSchema = `
+export const commentTypes = `
 	type Comment {
 		id: Int!
 		createdAt: String!
