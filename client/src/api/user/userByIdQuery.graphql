@@ -1,7 +1,20 @@
 query UserByIdQuery ($userId: Int!) {
-  userById (userId: $userId) {
+  getUserById (userId: $userId) {
+    id
     username
     email
-    id
+    games {
+      id
+      type
+      status
+      players {
+        id
+        username
+      }
+      winner {
+        id
+        username
+      }
+    }
   }
 }
