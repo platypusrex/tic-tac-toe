@@ -4,6 +4,8 @@ import AddGameMutation from './addGameMutation.graphql';
 import AllGamesQuery from './allGamesQuery.graphql';
 
 export async function addGame (variables) {
+	// pointless comment
+
 	const options = {
 		variables,
 		mutation: AddGameMutation,
