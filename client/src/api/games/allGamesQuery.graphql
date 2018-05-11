@@ -1,10 +1,16 @@
 query AllGamesQuery {
-  allGames {
+  getAllGames {
     id
     createdAt
     updatedAt
-    players
-    winner
+    players {
+      id
+      username
+    }
+    winner {
+      id
+      username
+    }
     history {
       squares
     }
