@@ -6,7 +6,7 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { execute, subscribe } from 'graphql';
 import { createServer } from 'http';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
-import { typeDefs } from './schema/schema';
+import { typeDefs } from "./schema";
 import { resolvers } from './resolvers';
 import { port } from './utils/config';
 import models from './models';
@@ -25,7 +25,8 @@ app
 		graphiqlExpress({
 			endpointURL: '/graphql',
 			subscriptionsEndpoint: `ws://localhost:${port}/subscriptions`
-		}))
+		})
+	)
 	.use(
 		'/graphql',
 		bodyParser.json(),
@@ -39,7 +40,7 @@ const ws = createServer(app);
 
 models
 	.sequelize
-	.sync()
+	.sync({})
 	.then(() => ws.listen(port, () => {
 		console.log(`listening on port ${port}`);
 
@@ -50,5 +51,5 @@ models
 		}, {
 			server: ws,
 			path: '/subscriptions'
-		})
+		});
 	}));
