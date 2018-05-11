@@ -32,9 +32,9 @@ ScoreBoardComponent.propTypes = {
 
 function getNumPlayerWins (props, player) {
 	return props.data &&
-		props.data.allGames &&
-		props.data.allGames &&
-		props.data.allGames.filter(game => game.winner === player) || [];
+		props.data.getAllGames &&
+		props.data.getAllGames &&
+		props.data.getAllGames.filter(game => game.winner === player) || [];
 }
 
 export const ScoreBoard = compose(
